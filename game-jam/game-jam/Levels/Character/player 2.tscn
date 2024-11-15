@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c08yoywuh3um"]
+
+[ext_resource type="Texture2D" uid="uid://cffa076o7mgdi" path="res://pixil-frame-0(3).png" id="1_pmvy1"]
+[ext_resource type="Texture2D" uid="uid://cpwwqbylocrb1" path="res://Levels/Character/light.png" id="2_ua4e0"]
+[ext_resource type="Script" path="res://Levels/Character/PointLight2D.gd" id="3_yw0il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilppe"]
+size = Vector2(32, 52)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(5.00001, -8.00001)
+scale = Vector2(0.098, 0.098)
+texture = ExtResource("1_pmvy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_ilppe")
+disabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.417847, 0.417847)
+energy = 0.58
+texture = ExtResource("2_ua4e0")
+script = ExtResource("3_yw0il")
